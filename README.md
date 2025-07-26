@@ -84,7 +84,7 @@ Tracks metrics (Accuracy, F1) over rounds.
   > See labeled sample counts grow
 
 ## Installation
-git clone https://github.com/yourusername/wine-gp-active-learning.git
+git clone https://github.com/arni-tech/wine-gp-active-learning.git
 cd wine-gp-active-learning
 pip install -r requirements.txt
 Requires Python 3.8+
