@@ -1,0 +1,39 @@
+# config.yaml
+
+data:
+  path: "data/winequality-red.csv"
+  test_size: 0.2
+  random_seed: 42
+
+preprocessing:
+  normalize: true
+  resample:
+    enabled: true
+    method: "smote"
+  bin_quality:
+    - {min: 0, max: 5, label: 0}
+    - {min: 6, max: 6, label: 1}
+    - {min: 7, max: 10, label: 2}
+
+model:
+model:
+  type: "gaussian_process"
+  kernel: "RationalQuadratic"
+  length_scale: 2.0
+  alpha: 0.1
+
+
+active_learning:
+  initial_label_size: 10
+  query_batch_size: 5
+  max_queries: 100
+  strategy: "entropy"  # options: entropy, variance, margin
+
+evaluation:
+  history_output: "results/history.json"
+  metrics:
+    - accuracy
+    - f1_score
+    - confusion_matrix
+  save_results_to: "results/metrics.json"
+  log_dir: "results/logs"
